@@ -1,553 +1,458 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
-<title>Powerstroke Launch Pad</title>
-<link rel="icon" type="image/png" href="Powerstroke Thumbnail.png">
-<link rel="apple-touch-icon" href="Powerstroke Thumbnail.png">
-<link rel="manifest" href="manifest.json">
+    <title>Powerstroke Launch Pad</title>
 
-<style>
+    <!-- POWERSTROKE APP ICONS -->
+    <link rel="icon" type="image/png" sizes="192x192" href="powerstroke-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="powerstroke-icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#20252b">
 
-body {
-    font-family: Arial, sans-serif;
-    background: #20252b;
-    color: white;
-    margin: 0;
-    padding: 30px;
-    text-align: center;
-}
+    <style>
 
-.logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 5px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #20252b;
+            color: white;
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
 
-h1 {
-    margin: 5px 0 0 0;
-    font-size: 32px;
-    letter-spacing: 1px;
-}
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 5px;
+        }
 
-.subtitle {
-    color: #7dbdff;
-    letter-spacing: 3px;
-    margin-bottom: 35px;
-    font-size: 13px;
-}
+        h1 {
+            margin: 5px 0 0 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
 
-.section {
-    max-width: 1200px;
-    margin: 0 auto 30px auto;
-}
+        .subtitle {
+            color: #7dbdff;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            font-size: 13px;
+        }
 
-.section-title {
-    font-size: 13px;
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-}
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+        }
 
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
+        .section-title {
+            font-size: 13px;
+            color: white;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
 
-.button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
 
-    width: 220px;
-    height: 135px;
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 135px;
+            background: #f4f5f6;
+            border: 2px solid #198cff;
+            border-radius: 14px;
+            color: #20252b;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
 
-    background: #f4f5f6;
-    border: 2px solid #198cff;
-    border-radius: 14px;
+        .button:hover {
+            transform: translateY(-3px);
+            border-color: #69b8ff;
+            box-shadow: 0 0 12px rgba(25,140,255,0.35);
+        }
 
-    color: #20252b;
-    text-decoration: none;
+        .system-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
 
-    font-size: 18px;
-    font-weight: bold;
+        .button span {
+            font-size: 12px;
+            font-weight: normal;
+            color: #5f6872;
+            margin-top: 7px;
+        }
 
-    transition: all 0.2s ease;
-}
+        .action {
+            background: #198cff;
+            color: white;
+            border: 2px solid #69b8ff;
+        }
 
-.button:hover {
-    transform: translateY(-3px);
-    border-color: #69b8ff;
-    box-shadow: 0 0 12px rgba(25,140,255,0.35);
-}
+        .action span {
+            color: white;
+        }
 
-.system-logo {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
+        .action:hover {
+            background: #1476d4;
+        }
 
-.button span {
-    font-size: 12px;
-    font-weight: normal;
-    color: #5f6872;
-    margin-top: 7px;
-}
+        .calendar-icon {
+            font-size: 38px;
+            margin-bottom: 7px;
+            line-height: 40px;
+        }
 
-.action {
-    background: #198cff;
-    color: white;
-    border: 2px solid #69b8ff;
-}
+        .flow-arrow {
+            font-size: 26px;
+            color: #198cff;
+            margin: -5px 0 15px 0;
+        }
 
-.action span {
-    color: white;
-}
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #7c8792;
+            letter-spacing: 1px;
+        }
 
-.action:hover {
-    background: #1476d4;
-}
+        /* TABLET */
 
-.calendar-icon {
-    font-size: 38px;
-    margin-bottom: 7px;
-    line-height: 40px;
-}
+        @media (max-width: 900px) {
 
-.flow-arrow {
-    font-size: 26px;
-    color: #198cff;
-    margin: -5px 0 15px 0;
-}
+            body {
+                padding: 20px;
+            }
 
-.footer {
-    margin-top: 40px;
-    font-size: 11px;
-    color: #7c8792;
-    letter-spacing: 1px;
-}
+            .section {
+                max-width: 100%;
+            }
 
+            .row {
+                gap: 14px;
+            }
 
-@media (max-width: 900px) {
+            .button {
+                width: 200px;
+                height: 125px;
+            }
+        }
 
-    body {
-        padding: 20px;
-    }
+        /* MOBILE */
 
-    .section {
-        max-width: 100%;
-    }
+        @media (max-width: 600px) {
 
-    .row {
-        gap: 14px;
-    }
+            body {
+                padding: 15px;
+            }
 
-    .button {
-        width: 200px;
-        height: 125px;
-    }
-}
+            .logo {
+                width: 120px;
+            }
 
-@media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
 
-    body {
-        padding: 15px;
-    }
+            .subtitle {
+                font-size: 13px;
+                margin-bottom: 25px;
+            }
 
-    .logo {
-        width: 120px;
-    }
+            .section-title {
+                font-size: 11px;
+            }
 
-    h1 {
-        font-size: 26px;
-    }
+            .row {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
 
-    .subtitle {
-        font-size: 11px;
-        margin-bottom: 25px;
-    }
+            .button {
+                width: 90%;
+                max-width: 340px;
+                height: 110px;
+            }
 
-    .section-title {
-        font-size: 12px;
-    }
+            .flow-arrow {
+                margin: 12px 0;
+            }
+        }
 
-    .row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .button {
-        width: 90%;
-        max-width: 340px;
-        height: 110px;
-    }
-
-    .flow-arrow {
-        margin: 0 0 12px 0;
-    }
-}
-}
-
-/* Tablet responsive layout */
-@media (max-width: 900px) {
-
-    body {
-        padding: 20px;
-    }
-
-    .section {
-        width: 100%;
-    }
-
-    .row {
-        gap: 14px;
-    }
-
-    .button {
-        width: 200px;
-        height: 125px;
-    }
-}
-
-
-/* Mobile responsive layout */
-@media (max-width: 600px) {
-
-    body {
-        padding: 15px;
-    }
-
-    .logo {
-        width: 120px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    .subtitle {
-        font-size: 13px;
-    }
-
-    .section-title {
-        font-size: 11px;
-    }
-
-    .row {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .button {
-        width: 90%;
-        max-width: 340px;
-        height: 110px;
-    }
-
-    .flow-arrow {
-        margin: 12px 0;
-    }
-}
-
-</style>
-    
-
-
+    </style>
 </head>
-
 
 <body>
 
+    <!-- POWERSTROKE -->
 
-<!-- POWERSTROKE -->
+    <img src="Powerstroke Thumbnail.png"
+         class="logo"
+         alt="Powerstroke Logo">
 
-<img src="Powerstroke Thumbnail.png"
-     class="logo"
-     alt="Powerstroke Logo">
+    <h1>POWERSTROKE</h1>
 
-<h1>POWERSTROKE</h1>
+    <div class="subtitle">
+        BUSINESS LAUNCH PAD
+    </div>
 
-<div class="subtitle">
-BUSINESS LAUNCH PAD
-</div>
 
+    <!-- MARKETING & COMMUNICATION -->
 
+    <div class="section">
 
-<!-- MARKETING & COMMUNICATION -->
+        <div class="section-title">
+            MARKETING & COMMUNICATION
+        </div>
 
-<div class="section">
+        <div class="row">
 
-<div class="section-title">
-MARKETING & COMMUNICATION
-</div>
+            <!-- MAILCHIMP -->
 
-<div class="row">
+            <a class="button"
+               href="https://login.mailchimp.com/"
+               target="_blank">
 
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=mailchimp.com&sz=128">
 
-<!-- MAILCHIMP -->
+                MAILCHIMP
 
-<a class="button"
-href="https://login.mailchimp.com/"
-target="_blank">
+                <span>
+                    Marketing & Customer Database
+                </span>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=mailchimp.com&sz=128">
+            </a>
 
-MAILCHIMP
 
-<span>
-Marketing & Customer Database
-</span>
+            <!-- CANVA -->
 
-</a>
+            <a class="button"
+               href="https://www.canva.com/"
+               target="_blank">
 
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=canva.com&sz=128">
 
+                CANVA
 
-<!-- CANVA -->
+                <span>
+                    Design & Marketing Content
+                </span>
 
-<a class="button"
-href="https://www.canva.com/"
-target="_blank">
+            </a>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=canva.com&sz=128">
 
-CANVA
+            <!-- OUTLOOK -->
 
-<span>
-Design & Marketing Content
-</span>
+            <a class="button"
+               href="mailto:">
 
-</a>
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=outlook.com&sz=128">
 
+                OUTLOOK
 
+                <span>
+                    Email & Communication
+                </span>
 
-<!-- OUTLOOK DESKTOP -->
+            </a>
 
-<a class="button"
-href="mailto:">
+        </div>
+    </div>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=outlook.com&sz=128">
 
-OUTLOOK
+    <div class="flow-arrow">↓</div>
 
-<span>
-Email & Communication
-</span>
 
-</a>
+    <!-- CUSTOMERS & OPERATIONS -->
 
+    <div class="section">
 
-</div>
+        <div class="section-title">
+            CUSTOMERS & OPERATIONS
+        </div>
 
-</div>
+        <div class="row">
 
+            <!-- NEW CUSTOMER -->
 
+            <a class="button action"
+               href="https://app.servicem8.com/"
+               target="_blank">
 
-<div class="flow-arrow">↓</div>
+                + NEW CUSTOMER
 
+                <span>
+                    Add Customer
+                </span>
 
+            </a>
 
-<!-- CUSTOMERS & OPERATIONS -->
 
-<div class="section">
+            <!-- SERVICEM8 -->
 
-<div class="section-title">
-CUSTOMERS & OPERATIONS
-</div>
+            <a class="button"
+               href="https://app.servicem8.com/"
+               target="_blank">
 
-<div class="row">
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=servicem8.com&sz=128">
 
+                SERVICEM8
 
-<!-- NEW CUSTOMER -->
+                <span>
+                    Customers, Quotes & Jobs
+                </span>
 
-<a class="button action"
-href="https://app.servicem8.com/"
-target="_blank">
+            </a>
 
-+ NEW CUSTOMER
 
-<span>
-Add Customer
-</span>
+            <!-- SCHEDULER -->
 
-</a>
+            <a class="button action"
+               href="https://go.servicem8.com/job_dispatch"
+               target="_blank">
 
+                <div class="calendar-icon">
+                    📅
+                </div>
 
+                SCHEDULER
 
-<!-- SERVICEM8 -->
+                <span>
+                    Site Visits & Scheduled Jobs
+                </span>
 
-<a class="button"
-href="https://app.servicem8.com/"
-target="_blank">
+            </a>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=servicem8.com&sz=128">
 
-SERVICEM8
+            <!-- NEW QUOTE -->
 
-<span>
-Customers, Quotes & Jobs
-</span>
+            <a class="button action"
+               href="https://app.servicem8.com/"
+               target="_blank">
 
-</a>
+                + NEW QUOTE
 
+                <span>
+                    Create Quote
+                </span>
 
+            </a>
 
-<!-- SERVICEM8 SCHEDULER -->
+        </div>
+    </div>
 
-<a class="button action"
-href="https://go.servicem8.com/job_dispatch"
-target="_blank">
 
-<div class="calendar-icon">
-📅
-</div>
+    <div class="flow-arrow">↓</div>
 
-SCHEDULER
 
-<span>
-Site Visits & Scheduled Jobs
-</span>
+    <!-- FINANCE & SUPPLIES -->
 
-</a>
+    <div class="section">
 
+        <div class="section-title">
+            FINANCE & SUPPLIES
+        </div>
 
+        <div class="row">
 
-<!-- NEW QUOTE -->
+            <!-- XERO -->
 
-<a class="button action"
-href="https://app.servicem8.com/"
-target="_blank">
+            <a class="button"
+               href="https://login.xero.com/"
+               target="_blank">
 
-+ NEW QUOTE
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=xero.com&sz=128">
 
-<span>
-Create Quote
-</span>
+                XERO
 
-</a>
+                <span>
+                    Invoices, Payments & Accounting
+                </span>
 
+            </a>
 
-</div>
 
-</div>
+            <!-- XO2 -->
 
+            <a class="button action"
+               href="https://www.xo2.com.au/"
+               target="_blank">
 
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=xo2.com.au&sz=128">
 
-<div class="flow-arrow">↓</div>
+                CHEMICAL ORDER
 
+                <span>
+                    Order Chemicals — XO2
+                </span>
 
+            </a>
 
-<!-- FINANCE & SUPPLIES -->
+        </div>
+    </div>
 
-<div class="section">
 
-<div class="section-title">
-FINANCE & SUPPLIES
-</div>
+    <div class="flow-arrow">↓</div>
 
-<div class="row">
 
+    <!-- REPORTING -->
 
-<!-- XERO -->
+    <div class="section">
 
-<a class="button"
-href="https://login.xero.com/"
-target="_blank">
+        <div class="section-title">
+            REPORTING & PERFORMANCE
+        </div>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=xero.com&sz=128">
+        <div class="row">
 
-XERO
+            <!-- POWER BI -->
 
-<span>
-Invoices, Payments & Accounting
-</span>
+            <a class="button"
+               href="https://app.powerbi.com/"
+               target="_blank">
 
-</a>
+                <img class="system-logo"
+                     src="https://www.google.com/s2/favicons?domain=powerbi.microsoft.com&sz=128">
 
+                POWER BI
 
+                <span>
+                    Business Intelligence Dashboard
+                </span>
 
-<!-- XO2 -->
+            </a>
 
-<a class="button action"
-href="https://www.xo2.com.au/"
-target="_blank">
+        </div>
+    </div>
 
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=xo2.com.au&sz=128">
 
-CHEMICAL ORDER
-
-<span>
-Order Chemicals — XO2
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-<div class="flow-arrow">↓</div>
-
-
-
-<!-- REPORTING -->
-
-<div class="section">
-
-<div class="section-title">
-REPORTING & PERFORMANCE
-</div>
-
-<div class="row">
-
-
-<!-- POWER BI -->
-
-<a class="button"
-href="https://app.powerbi.com/"
-target="_blank">
-
-<img class="system-logo"
-src="https://www.google.com/s2/favicons?domain=powerbi.microsoft.com&sz=128">
-
-POWER BI
-
-<span>
-Business Intelligence Dashboard
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-
-<div class="footer">
-
-POWERSTROKE EXTERIOR & WINDOW CLEANING
-
-</div>
-
+    <div class="footer">
+        POWERSTROKE EXTERIOR & WINDOW CLEANING
+    </div>
 
 </body>
 
