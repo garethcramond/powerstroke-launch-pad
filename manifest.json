@@ -1,0 +1,16 @@
+{
+  "name": "Powerstroke Launch Pad",
+  "short_name": "Powerstroke",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#20252b",
+  "theme_color": "#20252b",
+  "icons": [
+    {
+      "src": "Powerstroke Thumbnail.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
