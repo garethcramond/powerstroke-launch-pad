@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
 <title>Powerstroke Launch Pad</title>
 
@@ -130,7 +132,132 @@ h1 {
     letter-spacing: 1px;
 }
 
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .section {
+        max-width: 100%;
+    }
+
+    .row {
+        gap: 14px;
+    }
+
+    .button {
+        width: 200px;
+        height: 125px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 12px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 90%;
+        max-width: 340px;
+        height: 110px;
+    }
+
+    .flow-arrow {
+        margin: 0 0 12px 0;
+    }
+}
+}
+
+/* Tablet responsive layout */
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .row {
+        gap: 14px;
+    }
+
+    .button {
+        width: 200px;
+        height: 125px;
+    }
+}
+
+
+/* Mobile responsive layout */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 11px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .button {
+        width: 90%;
+        max-width: 340px;
+        height: 110px;
+    }
+
+    .flow-arrow {
+        margin: 12px 0;
+    }
+}
+
 </style>
+    
+
 
 </head>
 
